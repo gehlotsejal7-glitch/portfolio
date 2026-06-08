@@ -262,9 +262,11 @@
   }
   
   .about-photo {
-    width: 100%; 
-    min-height: 300px;
-    border-radius: 20px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
     overflow: hidden;
     background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-teal) 100%);
     display: flex; 
@@ -275,6 +277,13 @@
     color: rgba(255,255,255,0.3);
     aspect-ratio: 4/3;
   }
+  .about-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+}
   
   .about-photo-label {
     position: absolute; 
@@ -1027,240 +1036,249 @@
     .cursor, .cursor-ring { display: none; } 
   }
 
-  /* ============================================ */
-  /* RESPONSIVE STYLES */
-  /* ============================================ */
+/* ============================================ */
+/* RESPONSIVE STYLES - FIXED IMAGE ON ALL DEVICES */
+/* ============================================ */
 
-  /* Tablet Styles (768px and up) */
-  @media (min-width: 768px) {
-    nav {
-      padding: 1rem 3rem;
-    }
-    
-    section {
-      padding: 5rem 3rem;
-    }
-    
-    .hero {
-      padding: 8rem 3rem 5rem;
-    }
-    
-    .about-inner {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    
-    .about-photo-block {
-      position: sticky;
-      top: 100px;
-    }
-    
-    /* Make about image taller on desktop */
+/* Tablet Styles (768px and up) */
 @media (min-width: 768px) {
+  nav {
+    padding: 1rem 3rem;
+  }
+  
+  section {
+    padding: 5rem 3rem;
+  }
+  
+  .hero {
+    padding: 8rem 3rem 5rem;
+  }
+  
+  .about-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  .about-photo-block {
+    position: sticky;
+    top: 100px;
+  }
+  
+  /* FIXED: About image on tablet */
   .about-photo {
-    aspect-ratio: 3/4 !important;
-    min-height: 500px;
+    width: 100%;
+    min-height: 450px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+  }
+  
+  .about-hobbies {
+    right: -1rem;
+    top: 1rem;
+  }
+  
+  .project {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .project.reverse {
+    direction: rtl;
+  }
+  
+  .project.reverse > * {
+    direction: ltr;
+  }
+  
+  .exp-item {
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  .ach-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .contact-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero-bg-circle-1 {
+    width: 450px;
+    height: 450px;
+  }
+  
+  .hero-bg-circle-2 {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .scroll-indicator {
+    left: 3rem;
   }
 }
-    .about-photo {
-      width: 100%;
-      aspect-ratio: 4/3;
-    }
-    
-    .about-hobbies {
-      right: -1rem;
-      top: 1rem;
-    }
-    
-    .project {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-    
-    .project.reverse {
-      direction: rtl;
-    }
-    
-    .project.reverse > * {
-      direction: ltr;
-    }
-    
-    .exp-item {
-      grid-template-columns: 1fr 4fr;
-      gap: 2rem;
-      padding: 2rem 0;
-    }
-    
-    .ach-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-    
-    .contact-inner {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-    
-    .process-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .hero-bg-circle-1 {
-      width: 450px;
-      height: 450px;
-    }
-    
-    .hero-bg-circle-2 {
-      width: 350px;
-      height: 350px;
-    }
-    
-    .scroll-indicator {
-      left: 3rem;
-    }
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+  nav {
+    padding: 1.25rem 4rem;
   }
   
-  /* Desktop Styles (1024px and up) */
-  @media (min-width: 1024px) {
-    nav {
-      padding: 1.25rem 4rem;
-    }
-    
-    section {
-      padding: 6rem 4rem;
-    }
-    
-    .hero {
-      padding: 10rem 4rem 6rem;
-    }
-    
-    .process-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .ach-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .projects-header {
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: space-between;
-    }
-    
-    .hero-bg-circle-1 {
-      width: 600px;
-      height: 600px;
-    }
-    
-    .hero-bg-circle-2 {
-      width: 400px;
-      height: 400px;
-    }
-    
-    .scroll-indicator {
-      left: 4rem;
-    }
-    
-    .about-hobbies {
-      right: -1.5rem;
-      top: 1rem;
-    }
-    
-    .about-photo {
-      aspect-ratio: 4/3;
-    }
+  section {
+    padding: 6rem 4rem;
   }
   
-  /* Mobile Menu (768px and below) */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
-    
-    .nav-links {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      max-width: 300px;
-      height: 100vh;
-      background: var(--bg);
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      transition: right 0.3s ease;
-      box-shadow: -2px 0 20px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-    
-    .nav-links.active {
-      right: 0;
-    }
-    
-    .nav-links li a {
-      font-size: 1.1rem;
-    }
-    
-    .nav-cta {
-      display: none;
-    }
-    
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
+  .hero {
+    padding: 10rem 4rem 6rem;
   }
   
-  /* Small Mobile (480px and below) */
-  @media (max-width: 480px) {
-    html {
-      font-size: 14px;
-    }
-    
-    section {
-      padding: 3rem 1rem;
-    }
-    
-    .hero {
-      padding: 5rem 1rem 3rem;
-    }
-    
-    .btn-primary, .btn-secondary {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.85rem;
-    }
-    
-    .process-card {
-      padding: 1.25rem;
-    }
-    
-    .skill-card {
-      padding: 1rem;
-    }
-    
-    .contact-form {
-      padding: 1.25rem;
-    }
-    
-    .form-submit {
-      padding: 0.75rem;
-    }
-    
-    .about-photo {
-      min-height: 250px;
-    }
+  /* FIXED: About image on desktop */
+  .about-photo {
+    min-height: 520px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
   }
   
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .ach-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .projects-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  
+  .hero-bg-circle-1 {
+    width: 600px;
+    height: 600px;
+  }
+  
+  .hero-bg-circle-2 {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .scroll-indicator {
+    left: 4rem;
+  }
+  
+  .about-hobbies {
+    right: -1.5rem;
+    top: 1rem;
+  }
+}
+
+/* Mobile Menu (768px and below) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+  
+  .nav-cta {
+    display: none;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  /* FIXED: About image on mobile */
+  .about-photo {
+    min-height: 350px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  .hero {
+    padding: 5rem 1rem 3rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .process-card {
+    padding: 1.25rem;
+  }
+  
+  .skill-card {
+    padding: 1rem;
+  }
+  
+  .contact-form {
+    padding: 1.25rem;
+  }
+  
+  .form-submit {
+    padding: 0.75rem;
+  }
+  
+  /* FIXED: About image on small mobile */
+  .about-photo {
+    min-height: 300px;
+    object-fit: cover;
+  }
+}
   /* Landscape orientation fix */
   @media (max-width: 900px) and (orientation: landscape) {
     .hero {
